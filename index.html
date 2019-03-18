@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <section class="account container">
+            <div class="form-container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-image">
+                            <img src="/img/form-image.png" alt="Изображение формы">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <form action="thanks.html" class="form" id="form">
+                            <h2>Сохрани свой аккаунт</h2>
+                            <p>Получи бесплатно неограниченное количество форм, вопросов и ответов.</p>
+                                <div class="form-container_input">
+                                    <i class="fas fa-user"></i><input type="text" name="name" placeholder="Имя или никнейм">
+                                </div>
+                                <div class="form-container_input">
+                                    <i class="fas fa-envelope"></i><input type="email" name="email" placeholder="Email">
+                                </div>
+                                <div class="form-container_input">
+                                    <i class="fas fa-lock"></i><input type="password" name="password" placeholder="Пароль">
+                                </div>
+                                <button class="button" type="submit">Сохранить</button>
+                                <span> Уже есть аккаунт? <small>Войти</small></span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script>
+        $('#form').validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlenght: 2
+                },
+                email: {
+                    required: true,
+                    minlenght: 3,
+                    email: true
+                }, 
+                password: {
+                    required: true,
+                    minlenght: 6,
+                },
+                messages: {
+                    name: {
+                        required: "Введите имя!",
+                        minlenght: "Длинна не менее 2 символов"
+                    },
+                    email: {
+                        required: "Введите email!",
+                        minlenght: "Длинна не менее 3 символов"
+                    }, 
+                    password: {
+                        required: "Введите пароль!",
+                        minlenght: "Длинна не менее 6 символов"
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
